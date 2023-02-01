@@ -4,8 +4,7 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
-// create an employee array
-const employeeArr = []; 
+const employeeArr = []; // create an employee array
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
@@ -14,7 +13,7 @@ const render = require("./src/page-template.js");
 let team = []; 
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
-// function to initialize program and prompt user for input to create team profile page using inquirer
+// create team profile page using inquirer
 function init() {
   console.log("Welcome to the Team Profile Generator");
   // Inquirer manager prompt
@@ -91,7 +90,7 @@ function init() {
     });
 }
 
-// function to prompt user to select a role to create or finish building
+// Add more profiles or finish building
 function addEmployee() {
   inquirer.prompt([
       {
@@ -170,7 +169,7 @@ function addEmployee() {
               data.engineerGithubUsername
             );
             employeeArr.push(engineer); // add engineer to employee array
-           // function to prompt user to select a role to create or finish building
+           // Add more profiles or finish building
             inquirer.prompt([
                 {
                   type: "list",
@@ -260,7 +259,7 @@ function addEmployee() {
               data.internSchool
             );
             employeeArr.push(intern); // add intern to employee array
-            // Add more employees or finish building
+            // Add more profiles or finish building
             inquirer
               .prompt([
                 {
